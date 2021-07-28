@@ -14,7 +14,7 @@ class Producto{
     agregarGanancia (){
         return this.preciofinal * 1.2;
     }
-
+    
 
 
 }
@@ -29,6 +29,10 @@ const producto2 = new Producto (prompt("Ingresar nombre del producto:"), parseFl
 
 listaProductos.push (producto2);
 
+const producto3 = new Producto (prompt("Ingresar nombre del producto:"), parseFloat (prompt ("Ingrese su precio")));
+
+listaProductos.push (producto3);
+
 for (var producto of listaProductos){
     console.log("Nombre del Producto: "+producto.nombre);
     console.log("Precio neto: "+producto.precioneto);
@@ -37,7 +41,17 @@ for (var producto of listaProductos){
 
 }
 
+let listaOrdenada = listaProductos.sort(function(a,b){
+    if(a.preciofinal > b.preciofinal){
+        return 1;
+    }
+    if(a.preciofinal < b.preciofinal){
+        return -1;
+    }
 
+    
+    return 0;
+    
+});
 
-
-
+console.log(listaOrdenada);
