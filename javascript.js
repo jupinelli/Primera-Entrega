@@ -33,13 +33,7 @@ const producto3 = new Producto (prompt("Ingresar nombre del producto:"), parseFl
 
 listaProductos.push (producto3);
 
-for (var producto of listaProductos){
-    console.log("Nombre del Producto: "+producto.nombre);
-    console.log("Precio neto: "+producto.precioneto);
-    console.log("Precio NETO con IVA: "+producto.preciofinal);
-    console.log("Precio FINAL al consumidor: "+producto.agregarGanancia());
 
-}
 
 let listaOrdenada = listaProductos.sort(function(a,b){
     if(a.preciofinal > b.preciofinal){
@@ -55,3 +49,11 @@ let listaOrdenada = listaProductos.sort(function(a,b){
 });
 
 console.log(listaOrdenada);
+
+for (var producto of listaProductos){
+    console.log("Nombre del Producto: "+producto.nombre);
+    console.log("Precio neto: "+producto.precioneto);
+    console.log("Precio NETO con IVA: "+producto.preciofinal);
+    console.log("Precio FINAL al consumidor: "+producto.agregarGanancia());
+
+}
