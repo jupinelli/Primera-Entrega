@@ -29,9 +29,6 @@ const producto2 = new Producto (prompt("Ingresar nombre del producto:"), parseFl
 
 listaProductos.push (producto2);
 
-const producto3 = new Producto (prompt("Ingresar nombre del producto:"), parseFloat (prompt ("Ingrese su precio")));
-
-listaProductos.push (producto3);
 
 
 
@@ -51,9 +48,29 @@ let listaOrdenada = listaProductos.sort(function(a,b){
 console.log(listaOrdenada);
 
 for (var producto of listaProductos){
-    console.log("Nombre del Producto: "+producto.nombre);
-    console.log("Precio neto: "+producto.precioneto);
-    console.log("Precio NETO con IVA: "+producto.preciofinal);
-    console.log("Precio FINAL al consumidor: "+producto.agregarGanancia());
+    const listaProductos = document.getElementById("listaDeProductos");
+    const contenedor = document.createElement ("div");
 
+    contenedor.innerHTML = `
+            <div class = "card text-center mb-4">
+                <div class = "card-body">
+                    Producto: ${producto.nombre}<br>
+                    Precio neto: ${producto.precioneto}<br>
+                    Precio con IVA: ${producto.preciofinal}<br>
+                    Precio final: $${producto.agregarGanancia()} <br>
+
+                </div>
+            </div>
+
+   
+        `
+
+    listaProductos.appendChild(contenedor);
 }
+
+/* 
+console.log("Nombre del Producto: "+producto.nombre);
+console.log("Precio neto: "+producto.precioneto);
+console.log("Precio NETO con IVA: "+producto.preciofinal);
+console.log("Precio FINAL al consumidor: "+producto.agregarGanancia());
+ */
