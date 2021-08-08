@@ -62,7 +62,9 @@ for (var producto of listaProductos){
     const contenedor = document.createElement ("div");
 
     contenedor.innerHTML = `
+ 
             <div class = "card text-center mb-4">
+                
                 <div class = "card-body">
                     Producto: ${producto.nombre}<br>
                     Precio neto: ${producto.precioneto}<br>

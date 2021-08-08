@@ -59,6 +59,24 @@
 
 }
 
+.productContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px;
+}
+
+.productContainer>input{
+    width: 70%;
+    margin: 10px;
+    height: 40px;
+}
+
+.productContainer>button{
+    width: 200px;
+}
+
 .footer{
     background-color: #1A535C;
     height: 400px;
