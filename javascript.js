@@ -1,7 +1,10 @@
 
 let precioVenta = 0;
 let precioFinal = 0;
-
+let precioNeto = document.getElementById('precioNeto');
+let nombreProducto = document.getElementById('nombreProducto');
+let btnCalcular = document.getElementById('btnCalcular');
+let lista = document.getElementById("listaDeProductos");
 
 class Producto{
     constructor (nombre, precioneto){
@@ -15,40 +18,47 @@ class Producto{
         return this.preciofinal * 1.2;
     }
     
-
-
 }
+
+let listaOrdenada = () => {
+    listaProductos.sort(function(a,b){
+        if(a.preciofinal > b.preciofinal){
+            return 1;
+        }
+        if(a.preciofinal < b.preciofinal){
+            return -1;
+        }
+    
+        
+        return 0;
+        
+    });
+} 
+
+
 
 const listaProductos = [];
 
-const producto1 = new Producto (prompt("Ingresar nombre del producto:"), parseFloat (prompt ("Ingrese su precio")));
+btnCalcular.addEventListener('click', function(){
+    lista.innerHTML = '';
+    const producto1 = new Producto (nombreProducto.value, precioNeto.value);
 
-listaProductos.push (producto1);
+    listaProductos.push (producto1);
+    nombreProducto.value = '';
+    precioNeto.value = '';
 
-const producto2 = new Producto (prompt("Ingresar nombre del producto:"), parseFloat (prompt ("Ingrese su precio")));
+    console.log(listaProductos);
 
-listaProductos.push (producto2);
+    listaOrdenada ();
+    agregar ();
+    console.log(contenedor);
+}
+)
 
 
-
-
-let listaOrdenada = listaProductos.sort(function(a,b){
-    if(a.preciofinal > b.preciofinal){
-        return 1;
-    }
-    if(a.preciofinal < b.preciofinal){
-        return -1;
-    }
-
-    
-    return 0;
-    
-});
-
-console.log(listaOrdenada);
-
+const agregar = () => {
 for (var producto of listaProductos){
-    const listaProductos = document.getElementById("listaDeProductos");
+    
     const contenedor = document.createElement ("div");
 
     contenedor.innerHTML = `
@@ -65,12 +75,8 @@ for (var producto of listaProductos){
    
         `
 
-    listaProductos.appendChild(contenedor);
-}
+    lista.appendChild(contenedor);
 
-/* 
-console.log("Nombre del Producto: "+producto.nombre);
-console.log("Precio neto: "+producto.precioneto);
-console.log("Precio NETO con IVA: "+producto.preciofinal);
-console.log("Precio FINAL al consumidor: "+producto.agregarGanancia());
- */
+ 
+}
+}
