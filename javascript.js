@@ -1,17 +1,16 @@
-
 let precioVenta = 0;
 let precioFinal = 0;
 let precioNeto = document.getElementById('precioNeto');
 let nombreProducto = document.getElementById('nombreProducto');
 let btnCalcular = document.getElementById('btnCalcular');
 let lista = document.getElementById("listaDeProductos");
-let nombreCliente = sessionStorage.setItem('nombreCliente', prompt('Ingrese su nombre'));
+/* let nombreCliente = sessionStorage.setItem('nombreCliente', prompt('Ingrese su nombre')); */
 let saludoInicial = document.getElementById('saludo');
 let tituloProductos = document.getElementById('tituloProductos');
 
-saludoInicial.innerHTML = 'Hola '+ sessionStorage.getItem('nombreCliente').toLocaleUpperCase()+', bienvenidx a nuestra tienda!';
+/* saludoInicial.innerHTML = 'Hola '+ sessionStorage.getItem('nombreCliente').toLocaleUpperCase()+', bienvenidx a nuestra tienda!';
 
-tituloProductos.innerHTML = sessionStorage.getItem('nombreCliente')+', podes ingresar aqui los productos: ';
+tituloProductos.innerHTML = sessionStorage.getItem('nombreCliente')+', podes ingresar aqui los productos: '; */
 
 
 class Producto{
